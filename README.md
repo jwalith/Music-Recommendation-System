@@ -178,6 +178,8 @@ Music Recommendation/
 
 ## 📈 Expected Performance
 
+Below data recorded for less epochs(~10)
+
 | Stage | Method | Hit Rate@5 | NDCG@5 | Training Time |
 |-------|--------|------------|--------|---------------|
 | 1 | KNN-based | ~0.15 | ~0.10 | < 1 min |
