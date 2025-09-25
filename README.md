@@ -44,21 +44,6 @@ Music Recommendation/
    python 4.Two_tower.py
    ```
 
-## Datasets
-
-### Spotify Songs Dataset
-- **Source**: Archive folder
-- **Size**: 32,833 songs
-- **Features**: Audio features (danceability, energy, valence, tempo, etc.)
-- **Genres**: Pop, Rock, Hip-Hop, Electronic, and more
-
-### Last.fm Dataset
-- **Source**: hetrec2011-lastfm-2k folder
-- **Interactions**: 92,834 user-artist interactions
-- **Artists**: 17,632 unique artists
-- **Users**: 1,892 unique users
-- **Additional**: Social connections, tags, timestamps
-
 ## 🔧 Implementation Stages
 
 ### Stage 0: Data Exploration (`0.data_exploration.py`)
@@ -197,16 +182,6 @@ Below data recorded for less epochs(~10)
 - **Retrieval**: faiss-cpu
 - **Tracking**: wandb
 - **Visualization**: matplotlib, seaborn, plotly
-
-### Hardware Requirements
-- **Minimum**: 4GB RAM, CPU only
-- **Recommended**: 8GB RAM, CUDA GPU
-- **Optimal**: 16GB RAM, RTX 3080+ GPU
-
-### Memory Usage
-- **Stage 1-2**: ~2GB RAM
-- **Stage 3**: ~4GB RAM (GPU: ~2GB VRAM)
-- **Stage 4**: ~6GB RAM (GPU: ~4GB VRAM)
 
 ## 🔍 Usage Examples
 
