@@ -24,7 +24,6 @@ def explore_datasets():
     )
     
     # Load Spotify Songs
-    print("Loading Spotify songs dataset...")
     spotify_df = pd.read_csv("archive/spotify_songs.csv")
     print(f"Loaded {len(spotify_df)} songs")
     
@@ -32,33 +31,30 @@ def explore_datasets():
                      'loudness', 'speechiness', 'acousticness', 
                      'instrumentalness', 'liveness']
     
-    print("Audio features summary:")
     spotify_summary = spotify_df[audio_features].describe()
     print(spotify_summary)
     
     # Genre and artist distributions
     genre_counts = spotify_df['playlist_genre'].value_counts()
-    print("Top 10 genres:")
     print(genre_counts.head(10))
     
     artist_counts = spotify_df['track_artist'].value_counts()
-    print("Top 10 artists:")
     print(artist_counts.head(10))
     
     # Load Last.fm data
-    print("Loading Last.fm dataset...")
+
     
     artists_df = pd.read_csv("hetrec2011-lastfm-2k/artists.dat", sep='\t', 
                             names=['id', 'name', 'url', 'pictureURL'])
-    print(f"Loaded {len(artists_df)} artists")
+   
     
     interactions_df = pd.read_csv("hetrec2011-lastfm-2k/user_artists.dat", sep='\t',
                                  names=['user_id', 'artist_id', 'weight'])
-    print(f"Loaded {len(interactions_df)} user-artist interactions")
+    
     
     friends_df = pd.read_csv("hetrec2011-lastfm-2k/user_friends.dat", sep='\t',
                            names=['user_id', 'friend_id'])
-    print(f"Loaded {len(friends_df)} user friendships")
+   
     
     # Statistics
     print("Last.fm statistics:")
@@ -108,7 +104,7 @@ def explore_datasets():
     for genre, count in genre_counts.head(10).items():
         wandb.log({f"genre_{genre}": count})
     
-    print("Data exploration completed!")
+
     
     wandb.finish()
     
