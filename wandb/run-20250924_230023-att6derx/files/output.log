@@ -1,0 +1,63 @@
+🎵 Loading data for Stage 4...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Preparing user and item features...
+✅ Created features for 1892 users and 17632 items
+✅ User features dimension: 5
+✅ Item features dimension: 5
+
+📊 Creating interaction dataset...
+✅ Created 92834 valid interactions
+
+🤖 Training Two-Tower model for 20 epochs...
+🔄 Computing average embeddings for cold-start...
+✅ Average embeddings computed
+Epoch 1/20:   0%|                                      | 0/363 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'item_id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 631, in <module>
+    results = recommender.run_stage4()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 605, in run_stage4
+    train_losses = self.train_model(interactions, user_features_dict, item_features_dict,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 458, in train_model
+    for batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs}"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\tqdm\std.py", line 1181, in __iter__
+    for obj in iterable:
+               ^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\utils\data\dataloader.py", line 734, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\utils\data\dataloader.py", line 790, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 121, in __getitem__
+    item_id = interaction['item_id']
+              ~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\pandas\core\series.py", line 1130, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\pandas\core\series.py", line 1246, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'item_id'

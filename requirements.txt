@@ -1,0 +1,37 @@
+# Core Data Science Libraries
+pandas
+numpy
+scipy
+
+# Machine Learning Libraries
+scikit-learn
+lightgbm
+xgboost
+
+# Deep Learning Libraries
+torch
+torchvision
+transformers
+
+# Fast Similarity Search
+faiss-cpu
+
+# Experiment Tracking
+wandb
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Data Processing
+tqdm
+joblib
+
+# Jupyter Notebook Support
+jupyter
+ipykernel
+
+# Additional Utilities
+python-dotenv
+requests

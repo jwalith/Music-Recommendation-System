@@ -1,0 +1,23 @@
+2025-09-24 20:47:55,853 INFO    MainThread:35380 [wandb_setup.py:_flush():81] Current SDK version is 0.22.0
+2025-09-24 20:47:55,853 INFO    MainThread:35380 [wandb_setup.py:_flush():81] Configure stats pid to 35380
+2025-09-24 20:47:55,853 INFO    MainThread:35380 [wandb_setup.py:_flush():81] Loading settings from C:\Users\jwali\.config\wandb\settings
+2025-09-24 20:47:55,854 INFO    MainThread:35380 [wandb_setup.py:_flush():81] Loading settings from C:\Users\jwali\Downloads\Kaggle\Music recomendation\wandb\settings
+2025-09-24 20:47:55,854 INFO    MainThread:35380 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-09-24 20:47:55,854 INFO    MainThread:35380 [wandb_init.py:setup_run_log_directory():686] Logging user logs to C:\Users\jwali\Downloads\Kaggle\Music recomendation\wandb\run-20250924_204755-iv3thmns\logs\debug.log
+2025-09-24 20:47:55,854 INFO    MainThread:35380 [wandb_init.py:setup_run_log_directory():687] Logging internal logs to C:\Users\jwali\Downloads\Kaggle\Music recomendation\wandb\run-20250924_204755-iv3thmns\logs\debug-internal.log
+2025-09-24 20:47:55,854 INFO    MainThread:35380 [wandb_init.py:init():813] calling init triggers
+2025-09-24 20:47:55,854 INFO    MainThread:35380 [wandb_init.py:init():818] wandb.init called with sweep_config: {}
+config: {'stage': '2', 'method': 'feature_engineering_lightgbm', 'datasets': ['spotify', 'lastfm'], '_wandb': {}}
+2025-09-24 20:47:55,854 INFO    MainThread:35380 [wandb_init.py:init():861] starting backend
+2025-09-24 20:47:58,132 INFO    MainThread:35380 [wandb_init.py:init():864] sending inform_init request
+2025-09-24 20:47:58,184 INFO    MainThread:35380 [wandb_init.py:init():872] backend started and connected
+2025-09-24 20:47:58,186 INFO    MainThread:35380 [wandb_init.py:init():942] updated telemetry
+2025-09-24 20:47:58,188 INFO    MainThread:35380 [wandb_init.py:init():966] communicating run to backend with 90.0 second timeout
+2025-09-24 20:47:58,776 INFO    MainThread:35380 [wandb_init.py:init():1017] starting run threads in backend
+2025-09-24 20:48:00,637 INFO    MainThread:35380 [wandb_run.py:_console_start():2506] atexit reg
+2025-09-24 20:48:00,637 INFO    MainThread:35380 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-09-24 20:48:00,637 INFO    MainThread:35380 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-09-24 20:48:00,637 INFO    MainThread:35380 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-09-24 20:48:00,641 INFO    MainThread:35380 [wandb_init.py:init():1057] run started, returning control to user process
+2025-09-24 20:48:01,233 INFO    wandb-AsyncioManager-main:35380 [service_client.py:_forward_responses():84] Reached EOF.
+2025-09-24 20:48:01,234 INFO    wandb-AsyncioManager-main:35380 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

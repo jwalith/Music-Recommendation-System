@@ -1,0 +1,109 @@
+🎵 Loading data for Stage 4...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Preparing user and item features...
+✅ Created features for 1892 users and 17632 items
+✅ User features dimension: 5
+✅ Item features dimension: 5
+
+📊 Creating interaction dataset...
+✅ Created 92834 valid interactions
+
+🤖 Training Two-Tower model for 20 epochs...
+🚀 Enabled mixed precision training for GPU acceleration
+🔄 Computing average embeddings for cold-start...
+✅ Average embeddings computed
+Epoch 1/20: 100%|████████████████████████████| 182/182 [00:09<00:00, 18.37it/s]
+Epoch 1: Train Loss: 0.0632
+Epoch 2/20: 100%|████████████████████████████| 182/182 [00:10<00:00, 18.02it/s]
+Epoch 2: Train Loss: 0.0036
+Epoch 3/20: 100%|████████████████████████████| 182/182 [00:10<00:00, 17.80it/s]
+Epoch 3: Train Loss: 0.0020
+Epoch 4/20: 100%|████████████████████████████| 182/182 [00:09<00:00, 19.16it/s]
+Epoch 4: Train Loss: 0.0013
+Epoch 5/20: 100%|████████████████████████████| 182/182 [00:09<00:00, 18.51it/s]
+Epoch 5: Train Loss: 0.0010
+Epoch 6/20: 100%|████████████████████████████| 182/182 [00:10<00:00, 17.86it/s]
+Epoch 6: Train Loss: 0.0008
+Epoch 7/20: 100%|████████████████████████████| 182/182 [00:10<00:00, 16.71it/s]
+Epoch 7: Train Loss: 0.0007
+Epoch 8/20: 100%|████████████████████████████| 182/182 [00:11<00:00, 15.45it/s]
+Epoch 8: Train Loss: 0.0006
+Epoch 9/20: 100%|████████████████████████████| 182/182 [00:11<00:00, 16.36it/s]
+Epoch 9: Train Loss: 0.0005
+Epoch 10/20: 100%|███████████████████████████| 182/182 [00:12<00:00, 14.99it/s]
+Epoch 10: Train Loss: 0.0005
+Epoch 11/20: 100%|███████████████████████████| 182/182 [00:13<00:00, 13.96it/s]
+Epoch 11: Train Loss: 0.0004
+Epoch 12/20: 100%|███████████████████████████| 182/182 [00:12<00:00, 14.51it/s]
+Epoch 12: Train Loss: 0.0005
+Epoch 13/20: 100%|███████████████████████████| 182/182 [00:12<00:00, 14.87it/s]
+Epoch 13: Train Loss: 0.0005
+Epoch 14/20: 100%|███████████████████████████| 182/182 [00:12<00:00, 15.01it/s]
+Epoch 14: Train Loss: 0.0004
+Epoch 15/20: 100%|███████████████████████████| 182/182 [00:11<00:00, 15.54it/s]
+Epoch 15: Train Loss: 0.0004
+Epoch 16/20: 100%|███████████████████████████| 182/182 [00:11<00:00, 15.60it/s]
+Epoch 16: Train Loss: 0.0004
+Epoch 17/20: 100%|███████████████████████████| 182/182 [00:11<00:00, 15.87it/s]
+Epoch 17: Train Loss: 0.0004
+Epoch 18/20: 100%|███████████████████████████| 182/182 [00:11<00:00, 15.55it/s]
+Epoch 18: Train Loss: 0.0004
+Epoch 19/20: 100%|███████████████████████████| 182/182 [00:10<00:00, 16.83it/s]
+Epoch 19: Train Loss: 0.0004
+Epoch 20/20: 100%|███████████████████████████| 182/182 [00:11<00:00, 16.16it/s]
+Epoch 20: Train Loss: 0.0003
+✅ Training completed!
+
+🔨 Building FAISS retrieval system...
+🔨 Building FAISS index...
+✅ Built FAISS index with 17632 items
+✅ FAISS retrieval system built!
+
+📊 Evaluating model with comprehensive metrics...
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 666, in <module>
+    results = recommender.run_stage4()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 647, in run_stage4
+    metrics = self.evaluate_model(interactions, user_features_dict)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 579, in evaluate_model
+    recs = self.generate_recommendations(user_id, user_features_dict, k=max(k_values))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 553, in generate_recommendations
+    user_embedding = self.cold_start_handler.get_user_embedding(user_id, user_features)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 223, in get_user_embedding
+    return self.user_tower(torch.FloatTensor(user_features).unsqueeze(0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 50, in forward
+    return self.user_tower(user_features)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat1 in method wrapper_CUDA_addmm)

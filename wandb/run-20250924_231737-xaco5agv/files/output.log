@@ -1,0 +1,56 @@
+🎵 Loading data for Stage 4...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Preparing user and item features...
+✅ Created features for 1892 users and 17632 items
+✅ User features dimension: 5
+✅ Item features dimension: 5
+
+📊 Creating interaction dataset...
+✅ Created 92834 valid interactions
+
+🤖 Training Two-Tower model for 20 epochs...
+🚀 Enabled mixed precision training for GPU acceleration
+🔄 Computing average embeddings for cold-start...
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 666, in <module>
+    results = recommender.run_stage4()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 639, in run_stage4
+    train_losses = self.train_model(interactions, user_features_dict, item_features_dict,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 457, in train_model
+    self.cold_start_handler.compute_average_embeddings(user_features, item_features)
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 207, in compute_average_embeddings
+    user_embeddings = self.user_tower(torch.FloatTensor(user_features))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 50, in forward
+    return self.user_tower(user_features)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument mat1 in method wrapper_CUDA_addmm)

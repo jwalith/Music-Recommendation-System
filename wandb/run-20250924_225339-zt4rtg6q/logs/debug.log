@@ -1,0 +1,23 @@
+2025-09-24 22:53:39,510 INFO    MainThread:5188 [wandb_setup.py:_flush():81] Current SDK version is 0.22.0
+2025-09-24 22:53:39,510 INFO    MainThread:5188 [wandb_setup.py:_flush():81] Configure stats pid to 5188
+2025-09-24 22:53:39,510 INFO    MainThread:5188 [wandb_setup.py:_flush():81] Loading settings from C:\Users\jwali\.config\wandb\settings
+2025-09-24 22:53:39,510 INFO    MainThread:5188 [wandb_setup.py:_flush():81] Loading settings from C:\Users\jwali\Downloads\Kaggle\Music recomendation\wandb\settings
+2025-09-24 22:53:39,510 INFO    MainThread:5188 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-09-24 22:53:39,510 INFO    MainThread:5188 [wandb_init.py:setup_run_log_directory():686] Logging user logs to C:\Users\jwali\Downloads\Kaggle\Music recomendation\wandb\run-20250924_225339-zt4rtg6q\logs\debug.log
+2025-09-24 22:53:39,521 INFO    MainThread:5188 [wandb_init.py:setup_run_log_directory():687] Logging internal logs to C:\Users\jwali\Downloads\Kaggle\Music recomendation\wandb\run-20250924_225339-zt4rtg6q\logs\debug-internal.log
+2025-09-24 22:53:39,521 INFO    MainThread:5188 [wandb_init.py:init():813] calling init triggers
+2025-09-24 22:53:39,521 INFO    MainThread:5188 [wandb_init.py:init():818] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-09-24 22:53:39,521 INFO    MainThread:5188 [wandb_init.py:init():861] starting backend
+2025-09-24 22:53:41,789 INFO    MainThread:5188 [wandb_init.py:init():864] sending inform_init request
+2025-09-24 22:53:41,859 INFO    MainThread:5188 [wandb_init.py:init():872] backend started and connected
+2025-09-24 22:53:41,860 INFO    MainThread:5188 [wandb_init.py:init():942] updated telemetry
+2025-09-24 22:53:41,861 INFO    MainThread:5188 [wandb_init.py:init():966] communicating run to backend with 90.0 second timeout
+2025-09-24 22:53:42,327 INFO    MainThread:5188 [wandb_init.py:init():1017] starting run threads in backend
+2025-09-24 22:53:43,893 INFO    MainThread:5188 [wandb_run.py:_console_start():2506] atexit reg
+2025-09-24 22:53:43,893 INFO    MainThread:5188 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-09-24 22:53:43,894 INFO    MainThread:5188 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-09-24 22:53:43,894 INFO    MainThread:5188 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-09-24 22:53:43,899 INFO    MainThread:5188 [wandb_init.py:init():1057] run started, returning control to user process
+2025-09-24 22:53:47,005 INFO    wandb-AsyncioManager-main:5188 [service_client.py:_forward_responses():84] Reached EOF.
+2025-09-24 22:53:47,005 INFO    wandb-AsyncioManager-main:5188 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

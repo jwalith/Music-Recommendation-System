@@ -1,0 +1,7 @@
+Epoch 0: Loss=1.061, Accuracy=-0.037
+Epoch 1: Loss=0.912, Accuracy=0.144
+Epoch 2: Loss=0.860, Accuracy=0.341
+Epoch 3: Loss=0.603, Accuracy=0.673
+Epoch 4: Loss=0.653, Accuracy=0.732
+✅ W&B test completed successfully!
+Check your W&B dashboard to see the logged metrics.

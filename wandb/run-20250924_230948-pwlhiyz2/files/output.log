@@ -1,0 +1,45 @@
+🎵 Loading data for Stage 4...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Preparing user and item features...
+✅ Created features for 1892 users and 17632 items
+✅ User features dimension: 5
+✅ Item features dimension: 5
+
+📊 Creating interaction dataset...
+✅ Created 92834 valid interactions
+
+🤖 Training Two-Tower model for 20 epochs...
+🔄 Computing average embeddings for cold-start...
+✅ Average embeddings computed
+Epoch 1/20: 100%|████████████████████████████| 363/363 [00:16<00:00, 21.76it/s]
+Epoch 1: Train Loss: 0.0444
+Epoch 2/20:  51%|██████████████▏             | 184/363 [00:08<00:08, 21.55it/s]
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 665, in <module>
+    results = recommender.run_stage4()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 639, in run_stage4
+    train_losses = self.train_model(interactions, user_features_dict, item_features_dict,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 470, in train_model
+    for batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs}"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\tqdm\std.py", line 1181, in __iter__
+    for obj in iterable:
+               ^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\utils\data\dataloader.py", line 734, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\utils\data\dataloader.py", line 790, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 129, in __getitem__
+    'user_features': torch.FloatTensor(user_feat),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -1,0 +1,39 @@
+📊 Loading datasets for feature engineering...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+✅ Loaded 25434 user friendships
+
+👤 Creating user behavior features...
+✅ Created 1892 user features
+📊 User features: ['user_id', 'total_listens', 'avg_listen_weight', 'listen_weight_std', 'total_interactions', 'unique_artists', 'listen_diversity', 'activity_level', 'friend_count', 'max_artist_weight', 'artist_loyalty']
+
+🎤 Creating artist features...
+✅ Created 17632 artist features
+📊 Artist features: ['artist_id', 'total_listens', 'avg_listen_weight', 'listen_weight_std', 'total_interactions', 'unique_users', 'user_diversity', 'popularity_level', 'max_user_weight', 'user_loyalty', 'id', 'name']
+
+🔗 Creating interaction features...
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_feature_engineering.py", line 475, in <module>
+    results = engineer.run_stage2()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_feature_engineering.py", line 431, in run_stage2
+    self.create_interaction_features()
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_feature_engineering.py", line 189, in create_interaction_features
+    interactions = interactions.merge(
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\pandas\core\frame.py", line 10839, in merge
+    return merge(
+           ^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\pandas\core\reshape\merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\pandas\core\reshape\merge.py", line 794, in __init__
+    ) = self._get_merge_keys()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\pandas\core\reshape\merge.py", line 1298, in _get_merge_keys
+    right_keys.append(right._get_label_or_level_values(rk))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\pandas\core\generic.py", line 1925, in _get_label_or_level_values
+    raise ValueError(
+ValueError: The column label 'artist_id' is not unique.

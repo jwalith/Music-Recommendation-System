@@ -1,0 +1,42 @@
+🎵 Loading data for Stage 3...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Preparing user listening sequences...
+✅ Created 1877 user sequences
+ Average sequence length: 49.4
+✅ Encoded 17617 unique artists
+
+📊 Creating datasets...
+✅ Training sequences: 1501
+✅ Validation sequences: 376
+
+🤖 Training SASRec model for 10 epochs...
+Epoch 1/10:   0%|                                                                                     | 0/47 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "c:\Users\jwali\Downloads\Kaggle\Music recomendation\sasrec_seq.py", line 412, in <module>
+    results = recommender.run_stage3()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\jwali\Downloads\Kaggle\Music recomendation\sasrec_seq.py", line 390, in run_stage3
+    train_losses, val_losses = self.train_model(train_dataset, val_dataset)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\jwali\Downloads\Kaggle\Music recomendation\sasrec_seq.py", line 213, in train_model
+    for batch_inputs, batch_targets in tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs}"):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\tqdm\std.py", line 1181, in __iter__
+    for obj in iterable:
+               ^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\torch\utils\data\dataloader.py", line 734, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\torch\utils\data\dataloader.py", line 790, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "c:\Users\jwali\Downloads\Kaggle\Music recomendation\sasrec_seq.py", line 31, in __getitem__
+    sequence = [0] * (self.max_length - len(sequence)) + sequence
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (0,) (50,)

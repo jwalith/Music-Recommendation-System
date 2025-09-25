@@ -1,0 +1,53 @@
+_wandb:
+    value:
+        cli_version: 0.22.0
+        e:
+            px18xqmti3x0xjlb7u4ocpijxvvkuga0:
+                codePath: stage4_two_tower.py
+                codePathLocal: stage4_two_tower.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "12.9"
+                disk:
+                    /:
+                        total: "1021821579264"
+                        used: "528510681088"
+                email: jwalithkristam@gmail.com
+                executable: C:\Users\jwali\anaconda3\python.exe
+                gpu: NVIDIA GeForce RTX 4070 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 4608
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4070 Laptop GPU
+                      uuid: GPU-7055e8dd-0ad5-cdb3-3860-60997a9145a6
+                host: Sunday
+                memory:
+                    total: "16849264640"
+                os: Windows-11-10.0.26100-SP0
+                program: C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py
+                python: CPython 3.12.7
+                root: C:\Users\jwali\Downloads\Kaggle\Music recomendation
+                startedAt: "2025-09-25T03:26:29.968519Z"
+                writerId: px18xqmti3x0xjlb7u4ocpijxvvkuga0
+        m: []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 1
+                - 5
+                - 53
+            "2":
+                - 1
+                - 5
+                - 53
+            "3":
+                - 2
+                - 13
+            "4": 3.12.7
+            "5": 0.22.0
+            "8":
+                - 3
+            "12": 0.22.0
+            "13": windows-amd64

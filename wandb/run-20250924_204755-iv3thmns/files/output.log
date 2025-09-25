@@ -1,0 +1,42 @@
+📊 Loading datasets for feature engineering...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+✅ Loaded 25434 user friendships
+
+👤 Creating user behavior features...
+✅ Created 1892 user features
+📊 User features: ['user_id', 'total_listens', 'avg_listen_weight', 'listen_weight_std', 'total_interactions', 'unique_artists', 'listen_diversity', 'activity_level', 'friend_count', 'max_artist_weight', 'artist_loyalty']
+
+🎤 Creating artist features...
+✅ Created 17632 artist features
+📊 Artist features: ['artist_id', 'total_listens', 'avg_listen_weight', 'listen_weight_std', 'total_interactions', 'unique_users', 'user_diversity', 'popularity_level', 'max_user_weight', 'user_loyalty', 'id', 'name']
+
+🔗 Creating interaction features...
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'avg_listen_weight'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_feature_engineering.py", line 470, in <module>
+    results = engineer.run_stage2()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_feature_engineering.py", line 426, in run_stage2
+    self.create_interaction_features()
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_feature_engineering.py", line 190, in create_interaction_features
+    interactions['weight'] / interactions['avg_listen_weight']
+                             ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\pandas\core\frame.py", line 4107, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'avg_listen_weight'

@@ -1,0 +1,35 @@
+📊 Loading datasets...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Creating simple features...
+✅ Created 92834 feature samples
+📊 Features: ['user_id', 'artist_id', 'weight', 'user_total_listens', 'user_avg_weight', 'user_interactions', 'user_unique_artists', 'artist_total_listens', 'artist_avg_weight', 'artist_interactions', 'artist_unique_users', 'weight_vs_user_avg', 'weight_vs_artist_avg', 'user_activity_level', 'artist_popularity_level', 'user_diversity', 'artist_diversity', 'relative_user_activity', 'relative_artist_popularity', 'interaction_strength']
+
+📊 Preparing ranking data...
+✅ Prepared ranking data: 92834 samples, 18 features
+📊 Features used: ['weight', 'user_total_listens', 'user_avg_weight', 'user_interactions', 'user_unique_artists', 'artist_total_listens', 'artist_avg_weight', 'artist_interactions', 'artist_unique_users', 'weight_vs_user_avg', 'weight_vs_artist_avg', 'user_diversity', 'artist_diversity', 'relative_user_activity', 'relative_artist_popularity', 'interaction_strength', 'user_activity_encoded', 'artist_popularity_encoded']
+
+🤖 Training LightGBM-Ranker...
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_simple_feature_engineering.py", line 300, in <module>
+    results = engineer.run_stage2()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_simple_feature_engineering.py", line 266, in run_stage2
+    model, importance_df, X_test, y_test, groups_test = self.train_lightgbm_ranker(X, y, groups)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_simple_feature_engineering.py", line 141, in train_lightgbm_ranker
+    X_train, X_test, y_train, y_test, groups_train, groups_test = train_test_split(
+                                                                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\sklearn\utils\_param_validation.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\sklearn\model_selection\_split.py", line 2916, in train_test_split
+    arrays = indexable(*arrays)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\sklearn\utils\validation.py", line 530, in indexable
+    check_consistent_length(*result)
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\sklearn\utils\validation.py", line 473, in check_consistent_length
+    raise ValueError(
+ValueError: Found input variables with inconsistent numbers of samples: [92834, 92834, 1892]

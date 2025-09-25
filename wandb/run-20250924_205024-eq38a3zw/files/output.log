@@ -1,0 +1,41 @@
+📊 Loading datasets...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Creating simple features...
+✅ Created 92834 feature samples
+📊 Features: ['user_id', 'artist_id', 'weight', 'user_total_listens', 'user_avg_weight', 'user_interactions', 'user_unique_artists', 'artist_total_listens', 'artist_avg_weight', 'artist_interactions', 'artist_unique_users', 'weight_vs_user_avg', 'weight_vs_artist_avg', 'user_activity_level', 'artist_popularity_level', 'user_diversity', 'artist_diversity', 'relative_user_activity', 'relative_artist_popularity', 'interaction_strength']
+
+📊 Preparing ranking data...
+✅ Prepared ranking data: 92834 samples, 18 features
+📊 Features used: ['weight', 'user_total_listens', 'user_avg_weight', 'user_interactions', 'user_unique_artists', 'artist_total_listens', 'artist_avg_weight', 'artist_interactions', 'artist_unique_users', 'weight_vs_user_avg', 'weight_vs_artist_avg', 'user_diversity', 'artist_diversity', 'relative_user_activity', 'relative_artist_popularity', 'interaction_strength', 'user_activity_encoded', 'artist_popularity_encoded']
+
+🤖 Training LightGBM-Ranker...
+[LightGBM] [Warning] Unknown parameter: ndcg_eval
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_simple_feature_engineering.py", line 305, in <module>
+    results = engineer.run_stage2()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_simple_feature_engineering.py", line 271, in run_stage2
+    model, importance_df, X_test, y_test, groups_test = self.train_lightgbm_ranker(X, y, groups)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_simple_feature_engineering.py", line 170, in train_lightgbm_ranker
+    model = lgb.train(
+            ^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\lightgbm\engine.py", line 297, in train
+    booster = Booster(params=params, train_set=train_set)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\lightgbm\basic.py", line 3656, in __init__
+    train_set.construct()
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\lightgbm\basic.py", line 2590, in construct
+    self._lazy_init(
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\lightgbm\basic.py", line 2215, in _lazy_init
+    self.set_group(group)
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\lightgbm\basic.py", line 3161, in set_group
+    self.set_field("group", group)
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\lightgbm\basic.py", line 2847, in set_field
+    _safe_call(
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Lib\site-packages\lightgbm\basic.py", line 313, in _safe_call
+    raise LightGBMError(_LIB.LGBM_GetLastError().decode("utf-8"))
+lightgbm.basic.LightGBMError: Sum of query counts (74267) differs from the length of #data (3695950)

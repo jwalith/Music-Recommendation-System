@@ -1,0 +1,11 @@
+
+📈 Evaluation Results:
+Popularity Baseline:
+  - Top artist score: 1.000
+  - Diversity: 20 unique artists
+  - Avg listens: 785334.2
+
+Content-Based Baseline:
+  - Avg similarity: 0.966
+  - Similarity std: 0.026
+  - Songs evaluated: 100

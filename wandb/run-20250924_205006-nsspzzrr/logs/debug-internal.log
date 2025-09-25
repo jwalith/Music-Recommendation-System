@@ -1,0 +1,11 @@
+{"time":"2025-09-24T20:50:08.7423675-04:00","level":"INFO","msg":"stream: starting","core version":"0.22.0"}
+{"time":"2025-09-24T20:50:08.9760776-04:00","level":"INFO","msg":"stream: created new stream","id":"nsspzzrr"}
+{"time":"2025-09-24T20:50:08.9760776-04:00","level":"INFO","msg":"stream: started","id":"nsspzzrr"}
+{"time":"2025-09-24T20:50:08.9760776-04:00","level":"INFO","msg":"handler: started","stream_id":"nsspzzrr"}
+{"time":"2025-09-24T20:50:08.9760776-04:00","level":"INFO","msg":"sender: started","stream_id":"nsspzzrr"}
+{"time":"2025-09-24T20:50:08.9760776-04:00","level":"INFO","msg":"writer: started","stream_id":"nsspzzrr"}
+{"time":"2025-09-24T20:50:10.2555807-04:00","level":"INFO","msg":"stream: closing","id":"nsspzzrr"}
+{"time":"2025-09-24T20:50:10.5936774-04:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-09-24T20:50:10.7515923-04:00","level":"INFO","msg":"handler: closed","stream_id":"nsspzzrr"}
+{"time":"2025-09-24T20:50:10.7521009-04:00","level":"INFO","msg":"sender: closed","stream_id":"nsspzzrr"}
+{"time":"2025-09-24T20:50:10.7521009-04:00","level":"INFO","msg":"stream: closed","id":"nsspzzrr"}

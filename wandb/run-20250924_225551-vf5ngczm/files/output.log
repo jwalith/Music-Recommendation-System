@@ -1,0 +1,78 @@
+🎵 Loading data for Stage 3...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Preparing user listening sequences...
+✅ Created 1877 user sequences
+ Average sequence length: 49.4
+✅ Encoded 17617 unique artists
+
+📊 Creating datasets...
+✅ Training sequences: 1501
+✅ Validation sequences: 376
+
+🤖 Training SASRec model for 10 epochs...
+Epoch 1/10: 100%|██████████████████████████████| 47/47 [00:04<00:00, 10.98it/s]
+Epoch 1: Train Loss: 9.7265, Val Loss: 9.6072
+Epoch 2/10: 100%|██████████████████████████████| 47/47 [00:04<00:00, 11.27it/s]
+Epoch 2: Train Loss: 7.3820, Val Loss: 10.2221
+Epoch 3/10: 100%|██████████████████████████████| 47/47 [00:04<00:00, 11.15it/s]
+Epoch 3: Train Loss: 6.3115, Val Loss: 10.5439
+Epoch 4/10: 100%|██████████████████████████████| 47/47 [00:05<00:00,  9.26it/s]
+Epoch 4: Train Loss: 5.1209, Val Loss: 10.6631
+Epoch 5/10: 100%|██████████████████████████████| 47/47 [00:06<00:00,  6.93it/s]
+Epoch 5: Train Loss: 3.8592, Val Loss: 10.7482
+Epoch 6/10: 100%|██████████████████████████████| 47/47 [00:06<00:00,  7.36it/s]
+Epoch 6: Train Loss: 2.6054, Val Loss: 10.8913
+Epoch 7/10: 100%|██████████████████████████████| 47/47 [00:06<00:00,  7.51it/s]
+Epoch 7: Train Loss: 1.5232, Val Loss: 11.1780
+Epoch 8/10: 100%|██████████████████████████████| 47/47 [00:06<00:00,  7.47it/s]
+Epoch 8: Train Loss: 0.7899, Val Loss: 11.3557
+Epoch 9/10: 100%|██████████████████████████████| 47/47 [00:06<00:00,  7.40it/s]
+Epoch 9: Train Loss: 0.3910, Val Loss: 11.5226
+Epoch 10/10: 100%|█████████████████████████████| 47/47 [00:06<00:00,  7.22it/s]
+Epoch 10: Train Loss: 0.2259, Val Loss: 11.6205
+✅ Training completed!
+
+ Evaluating model with Hit Rate@[5, 10, 20] and NDCG@[5, 10, 20]...
+Evaluating: 100%|██████████████████████████████| 12/12 [00:00<00:00, 45.55it/s]
+Hit Rate@5: 0.0078
+NDCG@5: 0.0054
+Hit Rate@10: 0.0156
+NDCG@10: 0.0079
+Hit Rate@20: 0.0286
+NDCG@20: 0.0112
+
+🎯 Demo Sequential Recommendations:
+============================================================
+
+👤 User 1151 (Sequence 1):
+📊 Sequence length: 50
+🎵 Recent listening history: Diwali & Bonde da Stronda, Limp Bizkit, Beyond the Void, Heaven In Her Arms, Gyptian
+ Top 5 recommendations:
+  1. Eleventyseven
+  2. ABC
+  3. Alessandro Safina
+  4. Juan Luis Guerra
+  5. Jay-Z and Linkin Park
+
+👤 User 62 (Sequence 2):
+📊 Sequence length: 50
+🎵 Recent listening history: Travis, Океан Ельзи, SunSay, Sade, Schiller
+ Top 5 recommendations:
+  1. The Shadows
+  2. Avenged Sevenfold
+  3. Broken Social Scene
+  4. Yerzmyey
+  5. Panic! At the Disco
+
+👤 User 36 (Sequence 3):
+📊 Sequence length: 50
+🎵 Recent listening history: Blur, Taio Cruz, Yeong-wook Jo, Hadouken!, Four Year Strong
+ Top 5 recommendations:
+  1. Cute Is What We Aim For
+  2. Harrisons
+  3. Bombay Bicycle Club
+  4. Cobra Starship
+  5. Mägo de Oz

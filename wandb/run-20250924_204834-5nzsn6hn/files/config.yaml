@@ -1,0 +1,61 @@
+_wandb:
+    value:
+        cli_version: 0.22.0
+        e:
+            aaabagms5oomcslbc771n164ai61od6g:
+                codePath: stage2_feature_engineering.py
+                codePathLocal: stage2_feature_engineering.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "12.9"
+                disk:
+                    /:
+                        total: "1021821579264"
+                        used: "515459072000"
+                email: jwalithkristam@gmail.com
+                executable: C:\Users\jwali\Downloads\Kaggle\Music recomendation\music_recommendation_env\Scripts\python.exe
+                gpu: NVIDIA GeForce RTX 4070 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 4608
+                      memoryTotal: "8585740288"
+                      name: NVIDIA GeForce RTX 4070 Laptop GPU
+                      uuid: GPU-7055e8dd-0ad5-cdb3-3860-60997a9145a6
+                host: Sunday
+                memory:
+                    total: "16849264640"
+                os: Windows-11-10.0.26100-SP0
+                program: C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage2_feature_engineering.py
+                python: CPython 3.12.7
+                root: C:\Users\jwali\Downloads\Kaggle\Music recomendation
+                startedAt: "2025-09-25T00:48:34.720448Z"
+                writerId: aaabagms5oomcslbc771n164ai61od6g
+        m: []
+        python_version: 3.12.7
+        t:
+            "1":
+                - 5
+                - 8
+                - 53
+            "2":
+                - 5
+                - 8
+                - 53
+            "3":
+                - 13
+                - 16
+            "4": 3.12.7
+            "5": 0.22.0
+            "8":
+                - 3
+            "12": 0.22.0
+            "13": windows-amd64
+datasets:
+    value:
+        - spotify
+        - lastfm
+method:
+    value: feature_engineering_lightgbm
+stage:
+    value: "2"

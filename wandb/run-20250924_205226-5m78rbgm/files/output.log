@@ -1,0 +1,45 @@
+📊 Loading datasets...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Creating features...
+✅ Created 92834 feature samples
+📊 Features: ['user_id', 'artist_id', 'weight', 'user_total_listens', 'user_avg_weight', 'user_interactions', 'user_unique_artists', 'artist_total_listens', 'artist_avg_weight', 'artist_interactions', 'artist_unique_users', 'weight_vs_user_avg', 'weight_vs_artist_avg', 'user_diversity', 'artist_diversity', 'relative_user_activity', 'relative_artist_popularity', 'interaction_strength']
+
+🤖 Training ranking model...
+✅ Trained ranking model
+📊 Top 10 most important features:
+  weight_vs_artist_avg: 0.679
+  artist_avg_weight: 0.199
+  weight_vs_user_avg: 0.071
+  user_avg_weight: 0.011
+  user_total_listens: 0.010
+  relative_user_activity: 0.009
+  relative_artist_popularity: 0.008
+  artist_total_listens: 0.005
+  artist_unique_users: 0.003
+  artist_interactions: 0.002
+
+📊 Evaluating model...
+📈 Model Performance:
+  RMSE: 246.5355
+  MAE: 13.0208
+  Correlation: 0.9960
+
+🎯 Demo Recommendations:
+==================================================
+
+👤 User 1200 recommendations:
+📊 User stats: 17907 total listens, 50 unique artists
+🎵 Currently listening to 50 artists
+
+🏆 Top 5 predicted recommendations:
+  1. Duran Duran (Score: 1702.540, Actual: 1712.000)
+  2. John Frusciante (Score: 1439.280, Actual: 1435.000)
+  3. The Rolling Stones (Score: 987.810, Actual: 999.000)
+  4. Bijelo Dugme (Score: 653.000, Actual: 654.000)
+  5. Oasis (Score: 604.750, Actual: 611.000)
+
+✅ Stage 2 completed successfully!
+📊 Check W&B dashboard for detailed metrics

@@ -1,0 +1,75 @@
+🎵 Loading data for Stage 4...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Preparing user and item features...
+✅ Created features for 1892 users and 17632 items
+✅ User features dimension: 8
+✅ Item features dimension: 8
+
+📊 Creating interaction dataset...
+✅ Created 92834 valid interactions
+
+🤖 Training Two-Tower model for 7 epochs...
+🚀 Enabled mixed precision training for GPU acceleration
+🔄 Computing average embeddings for cold-start...
+✅ Average embeddings computed
+Epoch 1/7: 100%|█████████████████████████████| 182/182 [00:18<00:00,  9.60it/s]
+Epoch 1: Train Loss: 3.4814
+Epoch 2/7: 100%|█████████████████████████████| 182/182 [00:15<00:00, 11.82it/s]
+Epoch 2: Train Loss: 2.7920
+Epoch 3/7: 100%|█████████████████████████████| 182/182 [00:10<00:00, 17.73it/s]
+Epoch 3: Train Loss: 2.7707
+Epoch 4/7: 100%|█████████████████████████████| 182/182 [00:09<00:00, 18.62it/s]
+Epoch 4: Train Loss: 2.7685
+Epoch 5/7: 100%|█████████████████████████████| 182/182 [00:09<00:00, 18.76it/s]
+Epoch 5: Train Loss: 2.7675
+Epoch 6/7: 100%|█████████████████████████████| 182/182 [00:10<00:00, 17.94it/s]
+Epoch 6: Train Loss: 2.7670
+Epoch 7/7: 100%|█████████████████████████████| 182/182 [00:09<00:00, 18.58it/s]
+Epoch 7: Train Loss: 2.7652
+✅ Training completed!
+
+🔨 Building FAISS retrieval system...
+🔨 Building FAISS index...
+✅ Built FAISS index with 17632 items
+✅ FAISS retrieval system built!
+
+📊 Evaluating model with comprehensive metrics...
+Precision@5: 0.0020
+Recall@5: 0.0002
+NDCG@5: 0.0034
+Precision@10: 0.0070
+Recall@10: 0.0014
+NDCG@10: 0.0066
+Precision@20: 0.0055
+Recall@20: 0.0022
+NDCG@20: 0.0056
+
+🎯 Demo Two-Tower Recommendations:
+============================================================
+
+👤 User 446 (Demo 1):
+🎵 Top 5 recommendations:
+  1. MALICE MIZER
+  2. Diary of Dreams
+  3. Carpathian Forest
+  4. Moi dix Mois
+  5. Bella Morte
+
+👤 User 792 (Demo 2):
+🎵 Top 5 recommendations:
+  1. MALICE MIZER
+  2. Diary of Dreams
+  3. Carpathian Forest
+  4. Moi dix Mois
+  5. Bella Morte
+
+👤 User 1495 (Demo 3):
+🎵 Top 5 recommendations:
+  1. Novaspace
+  2. B.J. Thomas
+  3. Dead Silence Hides My Cries
+  4. Gram Parsons
+  5. Seleshe Damessae

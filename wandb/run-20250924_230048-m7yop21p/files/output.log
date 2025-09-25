@@ -1,0 +1,112 @@
+🎵 Loading data for Stage 4...
+✅ Loaded 32833 Spotify songs
+✅ Loaded 92834 Last.fm interactions
+✅ Loaded 17632 Last.fm artists
+
+🔧 Preparing user and item features...
+✅ Created features for 1892 users and 17632 items
+✅ User features dimension: 5
+✅ Item features dimension: 5
+
+📊 Creating interaction dataset...
+✅ Created 92834 valid interactions
+
+🤖 Training Two-Tower model for 20 epochs...
+🔄 Computing average embeddings for cold-start...
+✅ Average embeddings computed
+Epoch 1/20: 100%|████████████████████████████| 363/363 [00:21<00:00, 17.12it/s]
+Epoch 1: Train Loss: 0.0412
+Epoch 2/20: 100%|████████████████████████████| 363/363 [00:21<00:00, 17.12it/s]
+Epoch 2: Train Loss: 0.0023
+Epoch 3/20: 100%|████████████████████████████| 363/363 [00:21<00:00, 17.16it/s]
+Epoch 3: Train Loss: 0.0012
+Epoch 4/20: 100%|████████████████████████████| 363/363 [00:21<00:00, 17.08it/s]
+Epoch 4: Train Loss: 0.0009
+Epoch 5/20: 100%|████████████████████████████| 363/363 [00:21<00:00, 17.26it/s]
+Epoch 5: Train Loss: 0.0007
+Epoch 6/20: 100%|████████████████████████████| 363/363 [00:20<00:00, 17.30it/s]
+Epoch 6: Train Loss: 0.0006
+Epoch 7/20: 100%|████████████████████████████| 363/363 [00:20<00:00, 17.47it/s]
+Epoch 7: Train Loss: 0.0005
+Epoch 8/20: 100%|████████████████████████████| 363/363 [00:21<00:00, 17.16it/s]
+Epoch 8: Train Loss: 0.0005
+Epoch 9/20: 100%|████████████████████████████| 363/363 [00:21<00:00, 17.09it/s]
+Epoch 9: Train Loss: 0.0004
+Epoch 10/20: 100%|███████████████████████████| 363/363 [00:20<00:00, 17.33it/s]
+Epoch 10: Train Loss: 0.0005
+Epoch 11/20: 100%|███████████████████████████| 363/363 [00:21<00:00, 16.87it/s]
+Epoch 11: Train Loss: 0.0003
+Epoch 12/20: 100%|███████████████████████████| 363/363 [00:20<00:00, 17.33it/s]
+Epoch 12: Train Loss: 0.0004
+Epoch 13/20: 100%|███████████████████████████| 363/363 [00:21<00:00, 17.19it/s]
+Epoch 13: Train Loss: 0.0003
+Epoch 14/20: 100%|███████████████████████████| 363/363 [00:21<00:00, 17.19it/s]
+Epoch 14: Train Loss: 0.0003
+Epoch 15/20: 100%|███████████████████████████| 363/363 [00:20<00:00, 17.37it/s]
+Epoch 15: Train Loss: 0.0003
+Epoch 16/20: 100%|███████████████████████████| 363/363 [00:20<00:00, 17.33it/s]
+Epoch 16: Train Loss: 0.0003
+Epoch 17/20: 100%|███████████████████████████| 363/363 [00:21<00:00, 17.23it/s]
+Epoch 17: Train Loss: 0.0003
+Epoch 18/20: 100%|███████████████████████████| 363/363 [00:20<00:00, 17.39it/s]
+Epoch 18: Train Loss: 0.0003
+Epoch 19/20: 100%|███████████████████████████| 363/363 [00:20<00:00, 17.58it/s]
+Epoch 19: Train Loss: 0.0002
+Epoch 20/20: 100%|███████████████████████████| 363/363 [00:18<00:00, 19.71it/s]
+Epoch 20: Train Loss: 0.0002
+✅ Training completed!
+
+🔨 Building FAISS retrieval system...
+🔨 Building FAISS index...
+✅ Built FAISS index with 17632 items
+✅ FAISS retrieval system built!
+
+📊 Evaluating model with comprehensive metrics...
+Traceback (most recent call last):
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 631, in <module>
+    results = recommender.run_stage4()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 612, in run_stage4
+    metrics = self.evaluate_model(interactions, user_features_dict)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 545, in evaluate_model
+    recs = self.generate_recommendations(user_id, user_features_dict, k=max(k_values))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 519, in generate_recommendations
+    user_embedding = self.cold_start_handler.get_user_embedding(user_id, user_features)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 222, in get_user_embedding
+    return self.user_tower(torch.FloatTensor(user_features).unsqueeze(0))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\Downloads\Kaggle\Music recomendation\stage4_two_tower.py", line 50, in forward
+    return self.user_tower(user_features)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\container.py", line 244, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\modules\batchnorm.py", line 193, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2815, in batch_norm
+    _verify_batch_size(input.size())
+  File "C:\Users\jwali\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2781, in _verify_batch_size
+    raise ValueError(
+ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 256])
