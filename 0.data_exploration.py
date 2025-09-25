@@ -9,10 +9,6 @@ import wandb
 from pathlib import Path
 
 def explore_datasets():
-    """Explore datasets and log insights to W&B"""
-    
-    print("Starting data exploration...")
-    print("=" * 50)
     
     wandb.init(
         project="music-recommendation",
