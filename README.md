@@ -2,7 +2,7 @@
 
 A comprehensive music recommendation system implementing multiple approaches from baseline methods to advanced deep learning architectures.
 
-## 🎵 Overview
+## Overview
 
 This project implements a complete music recommendation pipeline with four different approaches, each building upon the previous one to create increasingly sophisticated recommendation systems.
 
@@ -16,10 +16,10 @@ Music Recommendation/
 ├── 3.SASRec_sequential.py         # SASRec sequential recommendations
 ├── 4.Two_tower.py                 # Two-tower architecture with FAISS
 ├── requirements.txt               # Python dependencies
-└── README.md                      # This file
+└── README.md                      
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ Music Recommendation/
    python 4.Two_tower.py
    ```
 
-## 📊 Datasets
+## Datasets
 
 ### Spotify Songs Dataset
 - **Source**: Archive folder
@@ -156,7 +156,7 @@ Music Recommendation/
 - Comprehensive evaluation metrics
 - Cold-start recommendations
 
-## ⚡ Performance Features
+## Performance Features
 
 ### GPU Acceleration
 - **CUDA Support**: Automatic GPU detection
@@ -227,7 +227,7 @@ python 3.SASRec_sequential.py
 # Run Two-Tower architecture
 python 4.Two_tower.py
 ```
-## 📊 Monitoring
+## Monitoring
 
 ### Weights & Biases Integration
 - **Automatic Logging**: Metrics, losses, and visualizations
@@ -241,7 +241,7 @@ python 4.Two_tower.py
 - **Error Handling**: Graceful failure management
 
 
-## 📚 References
+## References
 
 - **SASRec**: Self-Attentive Sequential Recommendation
 - **Two-Tower**: Neural Collaborative Filtering
